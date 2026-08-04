@@ -851,7 +851,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921481758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.88, y: -2.8, z: 0}
+  m_LocalPosition: {x: -8.04, y: -2.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -934,5 +934,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870d7ede2d4268246a652fc3186765e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuerza: 250
-  _rigidbody2D: {fileID: 1921481761}
+  altura: 1.87
+  edad: 20
+  nombre: SebasG
+  puedoVotar: 1
+  gameObject: {fileID: 1921481758}
+  rigidbody2D: {fileID: 1921481761}
+  collider2D: {fileID: 1921481762}
+  spriteRenderer: {fileID: 1921481759}
