@@ -2,23 +2,28 @@ using Unity.VisualScripting;
 using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed = 15f;
-
-    [SerializeField] private float _force = 15f;
-
+    [SerializeField] private float _movementSpeed = 5f;
+    [SerializeField] private float _jumpForce = 5f;
     [SerializeField] private Rigidbody2D _rigidbody2D;
-    
-    private void Start()
-    {
-         _rigidbody2D = GetComponent<Rigidbody2D>();
-    }
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            _rigidbody2D.AddForce(Vector2.up * _force);
-        }
+    [SerializeField] private Groundcheck _groundcheck;
 
-       _rigidbody2D.velocity = Vector2. right* _speed * Time.deltaTime;
+    private void FixedUpdate() // se inicia en el primer frame
+    {
+        if (_groundcheck.isGround)
+        { 
+                if (Input.GetKey(KeyCode.Space))
+                {
+                   _rigidbody2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Force);
+
+                   Debug.Log("oprimi la tecla");
+                }      
+           _rigidbody2D.velocity = Vector2.right * _movementSpeed;
+
+        }
+    }
+
+    private void Awake()
+    {
+        _rigidbody2D = GetComponent<Rigidbody2D>();
     }
 } 
