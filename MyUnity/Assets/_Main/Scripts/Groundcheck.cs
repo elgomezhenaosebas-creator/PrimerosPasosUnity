@@ -7,7 +7,7 @@ public class Groundcheck : MonoBehaviour
 
     public bool isGround;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
     
         {

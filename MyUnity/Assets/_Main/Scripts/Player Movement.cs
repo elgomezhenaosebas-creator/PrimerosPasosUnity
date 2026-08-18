@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _movementSpeed = 5f;
-    [SerializeField] private float _jumpForce = 5f;
+    [SerializeField] private float _jumpForce = 4f;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     [SerializeField] private Groundcheck _groundcheck;
 
@@ -13,11 +13,11 @@ public class PlayerMovement : MonoBehaviour
         { 
                 if (Input.GetKey(KeyCode.Space))
                 {
-                   _rigidbody2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Force);
+                   _rigidbody2D.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
 
                    Debug.Log("oprimi la tecla");
                 }      
-           _rigidbody2D.velocity = Vector2.right * _movementSpeed;
+           _rigidbody2D.velocity = new Vector2 (1 * _movementSpeed, _rigidbody2D.velocity.y);
 
         }
     }
