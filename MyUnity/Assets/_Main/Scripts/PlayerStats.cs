@@ -1,12 +1,20 @@
+using System;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
+
+
 {
     [SerializeField] private int _puntosVida = 100;
     public void RestarVida(int daño)
     {
-        _puntosVida = _puntosVida - daño;
+        _puntosVida = _puntosVida - 10;
+    }
+    public void SumarVida(int vida)
+    {
+        _puntosVida = _puntosVida + 10;
     }
 
- 
+
 }
+
